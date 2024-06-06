@@ -1,0 +1,80 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image:url("https://www.transparenttextures.com/patterns/foggy-birds.png");
+background-color: #796b9c;
+background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
+
+}
+
+.container {
+    max-width: 400px;
+    
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #dbd3ef;
+    box-shadow: 5px 10px 10px ;
+}
+.weather-info{
+    background-color: #dad3eb;
+}
+h1{
+    color: #181322;
+}
+h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #474649;
+}
+
+h3 {
+    color: #474649;
+    margin-bottom: 15px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    margin: 50px auto;
+    max-width: 500px;
+    padding: 10px;
+    margin-top: 18%;
+    border-radius: 5px;
+    background-color: rgb(189, 185, 203);
+}
+
+form{
+    position: relative;
+    left: 17%;
+}
+.search-box input {
+    flex: 1;
+    align-items: center;
+    padding: 7px 40px;
+    border: 1px solid black;
+    border-radius: 3px;
+    font-size: 16px;
+
+}
+
+.search-box button {
+    padding: 10px 20px;
+ 
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+footer{
+    position: fixed; /* Or position: relative; depending on layout */
+    left: 0;
+     bottom: 0;
+     width: 100%;
+    text-align: center;
+    color: #333;
+}
