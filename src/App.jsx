@@ -27,40 +27,39 @@ function App() {
 
   function submitData(event) {
     event.preventDefault();
-    
   }
 
   function getDetail() {
     setDeatail(true);
-    setEnteredCity(city)
+    setEnteredCity(city);
   }
 
   try {
-    const isMounted = useRef(false); 
+    const isMounted = useRef(false);
     useEffect(() => {
       if (isMounted.current) {
-      async function fetchData() {
-        const apiResponse = await axios.get(apiAddress, {
-          params: {
-            q: city,
-            appid: apiId,
-          },
-        });
-        console.log(apiResponse.data);
-        setResponse(() => {
-          return {
-            country: apiResponse.data.sys.country,
-            cityName: apiResponse.data.name,
-            temp: (apiResponse.data.main.temp - 273.15).toFixed(2),
-            weather: apiResponse.data.weather[0].main,
-            windSpeed: apiResponse.data.wind.speed,
-          };
-        });
-      }fetchData();
-    }else{
-      isMounted.current = true;
-    }
-    
+        async function fetchData() {
+          const apiResponse = await axios.get(apiAddress, {
+            params: {
+              q: city,
+              appid: apiId,
+            },
+          });
+          console.log(apiResponse.data);
+          setResponse(() => {
+            return {
+              country: apiResponse.data.sys.country,
+              cityName: apiResponse.data.name,
+              temp: (apiResponse.data.main.temp - 273.15).toFixed(2),
+              weather: apiResponse.data.weather[0].main,
+              windSpeed: apiResponse.data.wind.speed,
+            };
+          });
+        }
+        fetchData();
+      } else {
+        isMounted.current = true;
+      }
     }, [enteredCity]);
 
     //console.log((((apiResponse.data.main.temp - 32) * 5) / 9).toFixed(2));
