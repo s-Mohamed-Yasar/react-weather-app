@@ -8,7 +8,7 @@ function Detail(props) {
          <h2 id="city">Place : {props.cityName} - {props.country}</h2>
          <h2 id="temperature">Temperature : {props.temp}°C</h2>
          <h3 id="description">Weather : {props.weather}</h3>
-         <h3 id="description"> Wind Speed : {props.windSpeed}</h3>
+         <h3 id="description"> Wind Speed : {props.windSpeed} m/s</h3>
        </div>
      </div>
    ); 

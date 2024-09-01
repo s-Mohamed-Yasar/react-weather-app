@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import Detail from "./Detail";
 
@@ -36,7 +36,9 @@ function App() {
   }
 
   try {
+    const isMounted = useRef(false); 
     useEffect(() => {
+      if (isMounted.current) {
       async function fetchData() {
         const apiResponse = await axios.get(apiAddress, {
           params: {
@@ -54,8 +56,11 @@ function App() {
             windSpeed: apiResponse.data.wind.speed,
           };
         });
-      }
-      fetchData();
+      }fetchData();
+    }else{
+      isMounted.current = true;
+    }
+    
     }, [enteredCity]);
 
     //console.log((((apiResponse.data.main.temp - 32) * 5) / 9).toFixed(2));
